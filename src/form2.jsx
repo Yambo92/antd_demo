@@ -1,6 +1,9 @@
 import React from "react";
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 
+import BackgroundSlideshow from 'react-background-slideshow'
+import bg2 from "./imgs/bg2.jpg";
+import bg3 from "./imgs/bg3.jpg";
 
 class NormalLoginForm extends React.Component{
  
@@ -44,15 +47,16 @@ class NormalLoginForm extends React.Component{
               valuePropName: 'checked',
               initialValue: true,
             })(<Checkbox>remember me</Checkbox>)}
-              <a href="" className="login-form-forgot">
+              <a href="#" className="login-form-forgot">
                 Frogot password
               </a> <br/>
             <Button type="primary" htmlType="submit" className="login-form-button">
               Login 
             </Button><br/>
-            Or <a href="">register now!</a>
+            Or <a href="#">register now!</a>
           </Form.Item>
         </Form>
+        <BackgroundSlideshow images={[ bg2, bg3 ]} />
         </div>
        
       )

@@ -1,9 +1,12 @@
 import React from "react";
 import {Route, Switch, Redirect} from 'react-router-dom'
+
 import WrappedHorizontalLoginForm from './form'
 import WrappedNormalLoginForm from './form2'
 
-// sandbox中引入antd.css 不生效的解决办法
+
+
+//sandbox中引入antd.css 不生效的解决办法
 if(process.env.NODE_ENV === 'production'){
   import ("./styles.css")
 }else{
