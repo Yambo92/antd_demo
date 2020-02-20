@@ -5,7 +5,6 @@ import WrappedHorizontalLoginForm from './form'
 import WrappedNormalLoginForm from './form2'
 
 
-
 //sandbox中引入antd.css 不生效的解决办法
 if(process.env.NODE_ENV === 'production'){
   import ("./styles.css")
@@ -14,11 +13,11 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 export default function App() {
-  return (
-       <Switch>
-          <Redirect exact from='/'  to="/login" />
-         <Route  path="/login" component={WrappedNormalLoginForm} />
-         <Route path="/inlineForm" component={WrappedHorizontalLoginForm} />
-       </Switch>
-  );
+    return (
+     <Switch>
+         <Redirect exact from='/'  to="/login" />
+        <Route  path="/login" component={WrappedNormalLoginForm} />
+        <Route path="/inlineForm" component={WrappedHorizontalLoginForm} />
+      </Switch>
+ );
 }

@@ -5,8 +5,18 @@ import BackgroundSlideshow from 'react-background-slideshow'
 import bg2 from "./imgs/bg2.jpg";
 import bg3 from "./imgs/bg3.jpg";
 
+
+
 class NormalLoginForm extends React.Component{
- 
+  constructor(props){
+        super(props);
+        this.state={
+          isLoading: true
+        }
+  }
+  componentDidMount(){
+    this.setState({isLoading: false})
+  }
   handleSubmit = e => {
     e.preventDefault();
     
@@ -20,6 +30,9 @@ class NormalLoginForm extends React.Component{
   render(){
     const { getFieldDecorator } = this.props.form;
       return (
+        this.state.isLoading
+         ?  <div className="isloading">Loading</div>
+        :
         <div id='components-form-demo-normal-login'>
           <Form onSubmit={this.handleSubmit} className="login-form">
           <Form.Item>
