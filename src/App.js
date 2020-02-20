@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import WrappedHorizontalLoginForm from './form'
 import WrappedNormalLoginForm from './form2'
 
@@ -10,14 +10,12 @@ if(process.env.NODE_ENV === 'production'){
   import("antd/dist/antd.css").then(() => import("./styles.css"));
 }
 
-
-
 export default function App() {
   return (
-    <Switch>
-      <Route exact path="/" component={WrappedHorizontalLoginForm} />
-      <Route  path="/login" component={WrappedNormalLoginForm} />
-    </Switch>
- 
+       <Switch>
+          <Redirect exact from='/'  to="/login" />
+         <Route  path="/login" component={WrappedNormalLoginForm} />
+         <Route path="/inlineForm" component={WrappedHorizontalLoginForm} />
+       </Switch>
   );
 }
